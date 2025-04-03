@@ -1,12 +1,12 @@
 :root {
     --primary-color: #61dafb;
-    --primary-dark: #1492ca;
+    --primary-dark: #149eca;
     --secondary-color: #282c34;
     --light-bg: #f8f9fa;
     --dark-text: #212529;
     --light-text: #f8f9fa;
     --gray-text: #6c757d;
-    --border-color: #dee3e6;
+    --border-color: #dee2e6;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
 }
@@ -18,10 +18,11 @@
 }
 
 body {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', sans-serif;
     line-height: 1.6;
     color: var(--dark-text);
     background-color: #fff;
+    overflow-x: hidden;
 }
 
 .layout {
@@ -70,7 +71,7 @@ body {
     display: flex;
     align-items: center;
     padding: 0.75rem 1rem;
-    color: var(--list-text);
+    color: var(--light-text);
     text-decoration: none;
     border-radius: 4px;
     transition: var(--transition);
@@ -101,7 +102,7 @@ body {
 .social-links {
     display: flex;
     gap: 1rem;
-    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .social-links a {
@@ -119,7 +120,7 @@ body {
     color: var(--gray-text);
 }
 
-/* Main Stuff Styles */
+/* Main Content Styles */
 .content {
     flex: 1;
     margin-left: 280px;
@@ -127,7 +128,7 @@ body {
     background-color: #fff;
 }
 
-/* Intro Section Styles */
+/* intro Section */
 .intro {
     display: flex;
     align-items: center;
@@ -243,7 +244,7 @@ body {
 }
 
 /* Skills Section */
-.skils-grid {
+.skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
@@ -304,7 +305,7 @@ body {
 }
 
 .project-info {
-    padding: 1.rem;
+    padding: 1.5rem;
 }
 
 .project-card h3 {
@@ -370,6 +371,96 @@ body {
     color: var(--gray-text);
 }
 
+/* Projects Page Styles */
+.projects-header {
+    margin-bottom: 3rem;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.page-subtitle {
+    font-size: 1.1rem;
+    color: var(--gray-text);
+}
+
+.projects-grid {
+    display: grid;
+    gap: 4rem;
+}
+
+.project-detail {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.project-media {
+    position: sticky;
+    top: 3rem;
+}
+
+.project-image {
+    height: 300px;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.project-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.project-meta {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--gray-text);
+    font-size: 0.9rem;
+}
+
+.project-description {
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+.project-description ul {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+}
+
+.project-description li {
+    margin-bottom: 0.5rem;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.tech-tags li {
+    font-family: 'SF Mono', 'Roboto Mono', monospace;
+    font-size: 0.8rem;
+    background-color: rgba(97, 218, 251, 0.1);
+    color: var(--primary-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    list-style: none;
+}
+
 /* Button Styles */
 .btn {
     display: inline-block;
@@ -408,22 +499,22 @@ body {
         width: 240px;
         padding: 1.5rem 1rem;
     }
-
+    
     .content {
         margin-left: 240px;
         padding: 2rem;
     }
-
+    
     .intro {
         flex-direction: column;
         text-align: center;
         padding: 2rem 0;
     }
-
+    
     .intro-content {
         margin-bottom: 3rem;
     }
-
+    
     .about-content {
         flex-direction: column;
     }
@@ -471,7 +562,7 @@ body {
         padding: 1.5rem;
     }
     
-    .hero h1 {
+    .intro h1 {
         font-size: 2rem;
     }
     
@@ -479,7 +570,7 @@ body {
         font-size: 1.1rem;
     }
     
-    .intro-buttons {
+    .cta-buttons {
         display: flex;
         flex-direction: column;
         gap: 1rem;
