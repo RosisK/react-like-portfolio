@@ -88,12 +88,6 @@ body {
     color: var(--primary-color);
 }
 
-.sidebar-nav .active a {
-    background-color: rgba(97, 218, 251, 0.1);
-    color: var(--primary-color);
-    font-weight: 500;
-}
-
 .sidebar-footer {
     margin-top: auto;
     padding-top: 2rem;
@@ -118,6 +112,23 @@ body {
 .sidebar-footer p {
     font-size: 0.8rem;
     color: var(--gray-text);
+}
+
+/* Active Nav Link Styling */
+.sidebar-nav .active {
+    background-color: rgba(97, 218, 251, 0.1);
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.sidebar-nav .active i {
+    color: var(--primary-color);
+}
+
+/* Ensure only one item is active at a time */
+.sidebar-nav li:not(.active) a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--primary-color);
 }
 
 /* Main Content Styles */
@@ -189,6 +200,8 @@ body {
 /* Section Styles */
 .section {
     margin: 5rem 0;
+    padding: 1.75rem;
+    border-radius: 1.5rem;
 }
 
 .section-title {
@@ -580,4 +593,167 @@ body {
         width: 100%;
         text-align: center;
     }
+}
+
+/* Theme Styles */
+/* Theme Variables */
+:root {
+    --primary-color: #61dafb;
+    --primary-dark: #149eca;
+    --secondary-color: #282c34;
+    --light-bg: #f8f9fa;
+    --dark-text: #212529;
+    --light-text: #f8f9fa;
+    --gray-text: #6c757d;
+    --border-color: #dee2e6;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+[data-theme="dark"] {
+    --secondary-color: #1a1a1a;
+    --light-bg: #2d2d2d;
+    --dark-text: #f8f9fa;
+    --light-text: #f8f9fa;
+    --gray-text: #adb5bd;
+    --border-color: #495057;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Theme Switcher */
+.theme-switcher {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+    justify-content: center;
+}
+
+.theme-btn {
+    background: none;
+    border: none;
+    color: var(--gray-text);
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.theme-btn:hover {
+    color: var(--primary-color);
+    background-color: rgba(97, 218, 251, 0.1);
+}
+
+.theme-btn.active {
+    color: var(--primary-color);
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    z-index: 1000;
+    font-size: 1.25rem;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        position: fixed;
+        height: 100vh;
+        z-index: 999;
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+    }
+    
+    .content {
+        margin-left: 0;
+    }
+}
+
+/* Dark Mode Background Fixes */
+[data-theme="dark"] {
+    --secondary-color: #1a1a1a;
+    --light-bg: #2d2d2d;
+    --dark-text: #f8f9fa;
+    --light-text: #f8f9fa;
+    --gray-text: #adb5bd;
+    --border-color: #495057;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Apply dark theme to body and content */
+[data-theme="dark"] body {
+    background-color: #23272f;
+    color: var(--light-text);
+}
+
+[data-theme="dark"] .content {
+    background-color: #23272f;
+}
+
+[data-theme="dark"] .sidebar {
+    background-color: #1a1a1a;
+    border-right: 1px solid #333;
+}
+
+[data-theme="dark"] .skill-card,
+[data-theme="dark"] .project-card {
+    background-color: #2d2d2d;
+    border: 1px solid #333;
+}
+
+[data-theme="dark"] .section {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+}
+
+[data-theme="dark"] .intro {
+    background-color: transparent;
+}
+
+/* Ensure text colors change in dark mode */
+[data-theme="dark"] .section-title,
+[data-theme="dark"] .project-info h3,
+[data-theme="dark"] .skill-card h3,
+[data-theme="dark"] .tech-stack h3 {
+    color: var(--light-text);
+}
+
+[data-theme="dark"] .project-info p,
+[data-theme="dark"] .skill-card p,
+[data-theme="dark"] .about-text p {
+    color: var(--gray-text);
+}
+
+[data-theme="dark"] .project-tech span {
+    background-color: rgba(97, 218, 251, 0.2);
+}
+
+[data-theme="dark"] .btn.secondary {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+[data-theme="dark"] .btn.secondary:hover {
+    background-color: rgba(97, 218, 251, 0.1);
 }
