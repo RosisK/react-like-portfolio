@@ -194,6 +194,9 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 5rem;
+    background-image: url("/assets/images/My_photo.png");
+    background-size: cover;
+    background-position: center center;
     color: var(--secondary-color);
 }
 
