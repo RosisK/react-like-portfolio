@@ -60,8 +60,8 @@ document.addEventListener("DOMContentLoaded", function () {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
             
-            if (scrollPosition >= sectionTop - 200 && 
-                scrollPosition < sectionTop + sectionHeight - 200) {
+            if (scrollPosition >= sectionTop - 400 && 
+                scrollPosition < sectionTop + sectionHeight - 400) {
                 current = section.getAttribute('id');
             }
         });
