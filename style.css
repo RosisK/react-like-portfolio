@@ -18,7 +18,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', sans-serif;
+    font-family: 'Segoe UI', 'Roboto', 'Oxygen', sans-serif;
     line-height: 1.6;
     color: var(--dark-text);
     background-color: #fff;
